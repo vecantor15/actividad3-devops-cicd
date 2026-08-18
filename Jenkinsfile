@@ -64,26 +64,26 @@ pipeline {
         }
 
         stage('4. Smoke Test Container') {
-            steps {
-                sh '''
-                    set -eu
-                    CONTAINER_ID=$(docker run -d -p 18000:8000 ${LOCAL_IMAGE}:${BUILD_NUMBER})
-                    trap 'docker rm -f "$CONTAINER_ID" >/dev/null 2>&1 || true' EXIT
+    steps {
+        sh '''
+            set -eu
+            CONTAINER_ID=$(docker run -d -p 18000:8000 ${LOCAL_IMAGE}:${BUILD_NUMBER})
+            trap 'docker rm -f "$CONTAINER_ID" >/dev/null 2>&1 || true' EXIT
 
-                    i=0
-                    until curl -fsS http://127.0.0.1:18000/health >/dev/null; do
-                        i=$((i + 1))
-                        if [ "$i" -ge 20 ]; then
-                            docker logs "$CONTAINER_ID" || true
-                            exit 1
-                        fi
-                        sleep 1
-                    done
+            i=0
+            until curl -fsS http://docker:18000/health >/dev/null; do
+                i=$((i + 1))
+                if [ "$i" -ge 20 ]; then
+                    docker logs "$CONTAINER_ID" || true
+                    exit 1
+                fi
+                sleep 1
+            done
 
-                    curl -fsS http://127.0.0.1:18000/health
-                '''
-            }
-        }
+            curl -fsS http://docker:18000/health
+        '''
+    }
+}
 
         stage('5. Publish to Docker Hub') {
             steps {
