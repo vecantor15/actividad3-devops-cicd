@@ -42,7 +42,7 @@ jobs:
 
       - name: 6. Ejecutar pruebas y cobertura
         run: |
-          pytest \
+          python -m pytest \
             --cov=app \
             --cov-report=term-missing \
             --cov-report=xml:coverage.xml \
