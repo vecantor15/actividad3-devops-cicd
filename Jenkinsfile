@@ -9,22 +9,22 @@ pipeline {
     }
 
     parameters {
-        string(
-            name: 'DOCKERHUB_NAMESPACE',
-            defaultValue: 'REEMPLAZAR_USUARIO_DOCKERHUB',
-            description: 'Usuario u organización de Docker Hub'
-        )
-        string(
-            name: 'DOCKERHUB_REPOSITORY',
-            defaultValue: 'devops-web-lab',
-            description: 'Repositorio de imágenes en Docker Hub'
-        )
-        booleanParam(
-            name: 'DEPLOY_TO_K8S',
-            defaultValue: false,
-            description: 'Fase opcional para el siguiente laboratorio: desplegar en Kubernetes'
-        )
-    }
+    string(
+        name: 'DOCKERHUB_NAMESPACE',
+        defaultValue: 'victorc901202',
+        description: 'Usuario u organización de Docker Hub'
+    )
+    string(
+        name: 'DOCKERHUB_REPOSITORY',
+        defaultValue: 'devops-web-lab',
+        description: 'Repositorio de imágenes en Docker Hub'
+    )
+    booleanParam(
+        name: 'DEPLOY_TO_K8S',
+        defaultValue: false,
+        description: 'Fase opcional para el siguiente laboratorio: desplegar en Kubernetes'
+    )
+}
 
     environment {
         LOCAL_IMAGE = 'devops-web-lab'
