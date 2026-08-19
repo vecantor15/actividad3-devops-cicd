@@ -2,9 +2,9 @@
 
 **Asignatura:** Fundamentos de DevOps  
 **Actividad:** Laboratorio técnico — Integración y Entrega Continua  
-**Estudiante:** [NOMBRE COMPLETO]  
-**Repositorio:** [URL DEL REPOSITORIO]  
-**Fecha:** [FECHA DE ENTREGA]
+**Estudiante:** Victor Enrique Cantor Beltran 
+**Repositorio:** https://github.com/vecantor15/actividad3-devops-cicd 
+**Fecha:** 18 de agosto 2026
 
 ## 1. Objetivo
 
@@ -129,23 +129,10 @@ Aunque los conectores de seguridad se profundizarán en la siguiente fase del pr
 - Healthcheck y smoke test antes de publicación.
 - Quality gate de pruebas y análisis estático.
 
-## 9. Relación con la rúbrica
 
-| Criterio | Evidencia para nivel Excelente |
-|---|---|
-| Automatiza CI con etapas clave | `ci.yml` ejecutado automáticamente; checkout, dependencias, validación, Ruff, pruebas y cobertura. |
-| Define correctamente stages del despliegue | `Jenkinsfile` declarativo con checkout, build Docker, smoke test, push a registry, render K8s y deploy opcional. |
-| Herramientas actuales y relevantes | GitHub Actions, Jenkins, Docker, Docker Hub, Pytest, Ruff y Kubernetes, cada una con función justificada. |
-| Documentación técnica | README + informe + guía + capturas reales + código versionado. |
-| Repositorio organizado | Estructura por workflow, pruebas, manifests, documentación y archivos raíz claramente identificados. |
 
-## 10. Conclusiones
+## 9. Conclusiones
 
 Los dos pipelines conforman un flujo coherente y evolutivo. GitHub Actions actúa como puerta de calidad temprana y automática; Jenkins transforma el código en una imagen Docker versionada y preparada para Kubernetes. La solución evita acoplar el CD a un proveedor de nube específico, mantiene la configuración como código y produce ciclos cortos de retroalimentación. De esta manera, el laboratorio no se limita a cumplir una secuencia de comandos: demuestra principios de automatización, trazabilidad, reproducibilidad y colaboración propios de DevOps.
 
-## 11. Evidencias finales
 
-- Repositorio: [URL]
-- GitHub Actions: [URL DEL RUN]
-- Jenkins: [NÚMERO/URL DEL BUILD]
-- Docker Hub: [URL DE LA IMAGEN]
