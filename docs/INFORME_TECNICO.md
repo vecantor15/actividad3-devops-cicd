@@ -3,6 +3,7 @@
 **Asignatura:** Fundamentos de DevOps  
 **Actividad:** Laboratorio técnico — Integración y Entrega Continua  
 **Estudiante:** Victor Enrique Cantor Beltran 
+
 **Repositorio:** https://github.com/vecantor15/actividad3-devops-cicd 
 **Fecha:** 18 de agosto 2026
 
